@@ -145,11 +145,41 @@ console.log(result);
 	
 }
 
+const myObj = {
+  name: "John",
+  age: 30,
+  cars: [
+    {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+    {name:"BMW", models:["320", "X3", "X5"]},
+    {name:"Fiat", models:["500", "Panda"]}
+  ]
+}
+
+for(let i in myObj.cars){
+   x += "<h1>" + myObj.cars[i].name + "</h1>"
+   for(let j in c){
+   x += myObj.cars[i].models[j]
+}
+
+// IP - "x.y.z", "convert"
+// OP - {x: {y: {z: "convert"}}}
+
+function solve(ip) {
+  const str = ip.split('.');
+  let res = {};
+  let temp = res;
+  for (let i = 0; i < str.length - 1; i++) {
+    let new_temp = {};
+    temp[str[i]] = new_temp;
+    temp = new_temp;
+  }
+  temp[str.length - 1] = "convert";
+
+  return res;
+}
 
 
-
-
-
+console.log(solve("x.y.z"));
 
 
 
