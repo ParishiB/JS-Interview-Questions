@@ -112,7 +112,38 @@ function solve(arr) {
 	
 }
 
+// the original data array is:
 
+// let data = [
+// { "x": 1, "y": 2, "color": "red" },
+// { "x": 1, "y": 2, "stroke": "violet" },
+// { "x": 3, "y": 4, "color": "green" },
+// { "x": 3, "y": 4, "stroke": "blue" }
+// ];
+// the expected result is:
+
+// let data = [
+// { "x": 1, "y": 2, "color": "red", "stroke": "violet" },
+// { "x": 3, "y": 4, "color": "green", "stroke": "blue" }
+// ];
+
+function solve(obj){
+	
+let resultMap = {};
+
+data.forEach(item => {
+  const key = `${item.x}-${item.y}`;
+  if (!resultMap[key]) {
+    resultMap[key] = { x: item.x, y: item.y };
+  }
+  Object.assign(resultMap[key], item);
+});
+
+let result = Object.values(resultMap);
+
+console.log(result);
+	
+}
 
 
 
