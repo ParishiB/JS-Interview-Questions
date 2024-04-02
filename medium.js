@@ -34,3 +34,104 @@ function calculateTotalSpentByCategory(transactions) {
 
 
 module.exports = calculateTotalSpentByCategory;
+
+
+// const arr = [
+//   {name:'a',values:[1,2]},
+//   {name:'b',values:[3]},
+//   {name:'a',values:[4,5]}
+// ]
+
+// const arr2 = [
+//   {name:'a',values:[1,2,4,5]},
+//   {name:'b',values:[3]}
+// ]
+
+function solve(arr){
+   const res = []
+   for(let i = 0 ; i <  arr.length; i++){
+   const present = res.findIndex(item => item.name === arr[i].name);
+    if (present !== -1) {
+      res[present].values = [...res[present].values, ...arr[i].values];
+    } else {
+      res.push({
+        name: arr[i].name,
+        values: [...arr[i].values]
+      });
+    }
+   }
+	return res;	
+}
+
+
+// var originalArray = [{
+//   id: 1,
+//   elements: [1, 2]
+// },
+// {
+//   id: 1,
+//   elements: [3, 4]
+// },
+// {
+//   id: 5,
+//   elements: ['a', 'b']
+// },
+// {
+//   id: 5,
+//   elements: ['c', 'd']
+// }, {
+//   id: 27,
+//   elements: []
+// }]
+// // I'd like to modify it to look like this (merge by id and join elements):
+// newArray = [{
+//   id: 1,
+//   elements: [1, 2, 3, 4]
+// }, {
+//   id: 5,
+//   elements: ['a', 'b', 'c', 'd']
+// }, {
+//   id: 27,
+//   elements: []
+// }]
+
+function solve(arr) {
+  const res = [] 
+  for(let i = 0 ; i < arr.length ; i++){
+    let find = res.findIndex((item) => item.id === arr[i].id)
+    if(find != -1){
+	 res[find].elements = [...res[find].elements , ...arr[i].elements];
+    }else{
+	res.push({
+		id : arr[i].id,
+		elements : arr[i].elements
+	})
+    }	  
+  }
+  return res;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
