@@ -102,7 +102,22 @@ Q) (function(x){
   }(2)
 }(1)
 
-Q)
+//*******************************************************************************************************
+    
+console.log("a");
+setTimeout(() => console.log("b"), 0);
+Promise.resolve("c").then((value) => console.log(value));
+console.log("d");
+
+//*******************************************************************************************************
+function fn() {
+  for (var count = 0; count < 3; count++) {
+    setTimeout(function () {
+      console.log(count);
+    }, 1000);
+  }
+}
+
 
 
 
