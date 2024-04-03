@@ -282,6 +282,24 @@ listens for events that bubble up from its descendants. When an event occurs, th
   </body>
 </html>
 
+// Flatten the array
+
+const arr = [1, 2, [2, [4, 8, 9], 3], [5, 6]];
+
+function flattenArr(arr) {
+  const res = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      res.push(...flattenArr(arr[i])); // Recursively flatten nested arrays
+    } else {
+      res.push(arr[i]);
+    }
+  }
+  return res;
+}
+
+const flattenedArray = flattenArr(arr);
+console.log(flattenedArray);
 
 
 
