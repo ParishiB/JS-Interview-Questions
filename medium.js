@@ -182,8 +182,105 @@ function solve(ip) {
 console.log(solve("x.y.z"));
 
 
+// Explain event bubbling
+	
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <form>
+        <button>BUTTON</button>
+      </form>
+    </div>
+    <script>
+      const button = document.querySelector("button");
+      const form = document.querySelector("form");
+      const div = document.querySelector("div");
+
+      div.addEventListener("click", func);
+      form.addEventListener("click", func);
+      button.addEventListener("click", func);
+
+      function func(e) {
+        alert(e.currentTarget.tagName);
+      }
+    </script>
+  </body>
+</html>
+
+// Q) What is event capturing?
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <form>
+        <button>BUTTON</button>
+      </form>
+    </div>
+    <script>
+      const button = document.querySelector("button");
+      const form = document.querySelector("form");
+      const div = document.querySelector("div");
+
+      div.addEventListener("click", func, true);
+      form.addEventListener("click", func, true);
+      button.addEventListener("click", func, true);
+
+      function func(e) {
+        alert(e.currentTarget.tagName);
+      }
+    </script>
+  </body>
+</html>
 
 
+// Q) How do you stop propgation?
+Wherever you want to stop propogation, add
+e.stopPropogation()
+
+
+// Q) What is event delegation ?
+
+Event delegation is a pattern in JavaScript where instead of attaching an event listener to each individual element,
+you attach a single event listener to a parent element. This parent element then 
+listens for events that bubble up from its descendants. When an event occurs, the parent element's event listener handles it based on the target element that triggered the event.
+	
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="products">
+      <span class="mobile">mobile</span>
+      <span class="Headphome">Headphone</span>
+      <span class="laptop">Laptop</span>
+      <span class="speaker">Speaker</span>
+      <span class="USB Dock">USB Dock</span>
+      <span class="Tripod">Tripod</span>
+    </div>
+    <script>
+      document.querySelector(".products").addEventListener("click", (e) => {
+        if (e.target.tagName === "SPAN") {
+          window.location.href += "/" + event.target.className;
+        }
+      });
+    </script>
+  </body>
+</html>
 
 
 
