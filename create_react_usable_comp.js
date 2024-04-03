@@ -1,3 +1,5 @@
+// Prop drilling is one of the important Concept to be covered
+
 import React from "react";
 import { Button } from "./component/Button";
 import Header from "./component/Header";
