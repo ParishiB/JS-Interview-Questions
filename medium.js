@@ -301,10 +301,33 @@ function flattenArr(arr) {
 const flattenedArray = flattenArr(arr);
 console.log(flattenedArray);
 
+// Flatten the object
+const nestedObject = {
+  a: 1,
+  b: {
+    c: 2,
+    d: {
+      e: 3,
+      f: 4,
+    },
+  },
+  g: 5,
+};
 
-
-
-
+function flattenObject(obj) {
+  let res = {};
+  for (let i = 0; i < obj.length; i++) {
+    if (typeof obj[i] != Object) {
+      res[i] = obj[i];
+    } else {
+      const flattened = flattenObject(obj[i]);
+      for (let j in flattened) {
+        res[i + "." + j] = flattened[j];
+      }
+    }
+  }
+  return res;
+}
 
 
 
