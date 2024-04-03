@@ -329,6 +329,10 @@ function flattenObject(obj) {
   return res;
 }
 
+//Create reusable components in React
+
+
+
 
 
 
