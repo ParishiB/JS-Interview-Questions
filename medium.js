@@ -362,6 +362,22 @@ const calc = {
   },
 };
 
+// 
+	
+function outer() {
+  function inner() {
+    console.log(x);
+  }
+  const x = 5;
+  return inner;
+}
+
+const inner = outer();
+inner();
+	
+// 
+
+
 Q) What can be the props used to help user work with a reusable library ?
 The component like onClick , onChange , onSelect
 
