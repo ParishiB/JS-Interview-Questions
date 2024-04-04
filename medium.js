@@ -362,6 +362,8 @@ const calc = {
   },
 };
 
+Q) What can be the props used to help user work with a reusable library ?
+The component like onClick , onChange , onSelect
 
 
 
