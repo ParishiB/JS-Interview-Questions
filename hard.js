@@ -150,6 +150,8 @@ class Todos {
   </body>
 </html>
 
+// 
+
 async function foo() {
   let result = "I am waiting";
   return result;
@@ -164,7 +166,15 @@ async function getValue() {
 
 getValue();
 
+// 
 
+function abc() {
+  console.log("hi");
+ 
+}
+
+const value = new abc();
+console.log(value);
 
 
 
