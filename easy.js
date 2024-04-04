@@ -119,8 +119,17 @@ function fn() {
 }
 
 
+//*******************************************************************************************************
 
-
+function fn() {
+  for (var count = 0; count < 3; count++) {
+    (function (c) {
+      setTimeout(function () {
+        console.log(c);
+      }, 1000);
+    })(count);
+  }
+}
 
 
 
