@@ -329,7 +329,18 @@ function flattenObject(obj) {
   return res;
 }
 
-//Create reusable components in React
+//Create a memoise function
+	
+function memoise(fn){
+ const res= {}
+ return function(...args) {
+  var argsCache = JSON.stringify(args)
+  if(!res[argsCache]){
+      res[argsCache] = fn.call(this,...args)
+  }else{
+   return res[argsCache]
+  }  	 
+}
 
 
 
