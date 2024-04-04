@@ -107,6 +107,50 @@ class Todos {
 }
 
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="todo-container">
+      <h1>My To-do List</h1>
+      <form onsubmit="addTodo(event)">
+        <input type="text" id="todo-input" placeholder="Add a new task" />
+        <button type="submit">Add</button>
+      </form>
+      <ul id="todo-list" onclick="removeTodo(event)"></ul>
+    </div>
+    <script>
+      const input = document.getElementById("todo-input");
+      const todoList = document.getElementById("todo-list");
+
+      function addTodo(event) {
+        event.preventDefault();
+        const newTodo = input.value.trim();
+        if (newTodo) {
+          const li = document.createElement("li");
+          const button = document.createElement("button");
+          li.textContent = newTodo;
+          button.textContent = "Delete";
+          todoList.appendChild(li);
+          todoList.appendChild(button);
+          button.addEventListener("click", () => {
+            todoList.removeChild(li);
+            todoList.removeChild(button);
+          });
+          input.value = "";
+        } else {
+          console.log("Please enter a task");
+        }
+      }
+    </script>
+  </body>
+</html>
+
+
 
 
 
