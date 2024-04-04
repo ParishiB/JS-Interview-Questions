@@ -366,4 +366,13 @@ Q) What can be the props used to help user work with a reusable library ?
 The component like onClick , onChange , onSelect
 
 
+Q) What is localstorage and session storage ?
+Q) What are the container structures used?
+Q) What are react.Fragment ?
+Q) Differentiate between state and props ? (explain in terms of stateless and props , reusable componenet)
+Q) Differentiate useMemo and useCallback ? 
+Q) What are custom hooks ?
+Q) What is redux and how is it used?
+Q) What is dffiierence between type and interfaces(Typescript question)?
+Q) Give example of where arrow function makes more sense than normal function and vice-versa?
 
