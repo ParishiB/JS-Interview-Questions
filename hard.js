@@ -150,6 +150,19 @@ class Todos {
   </body>
 </html>
 
+async function foo() {
+  let result = "I am waiting";
+  return result;
+}
+
+async function getValue() {
+  let result = await foo();
+  console.log(result);
+  console.log("Hi");
+  console.log("9");
+}
+
+getValue();
 
 
 
