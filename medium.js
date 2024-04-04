@@ -342,9 +342,25 @@ function memoise(fn){
   }  	 
 }
 
+// Implement 
+// const result = calc.add(10).multiply(10).subtract(0);
+// console.log(result);
 
-
-
+const calc = {
+  total: 0,
+  add(a) {
+    this.total += a;
+    return this;
+  },
+  multiply(b) {
+    this.total += b;
+    return this;
+  },
+  subtract(c) {
+    this.total -= c;
+    return this;
+  },
+};
 
 
 
