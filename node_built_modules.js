@@ -1,7 +1,7 @@
 Q) Top 5 built in modules?
   1)fs  2) path  3) os 4)events 5)http
 
-## fs modules
+ // fs modules
 
 const fs = require("fs")
 
@@ -22,8 +22,8 @@ fs.readFileSync('./contacts.txt' , 'utf-8' , ((err,data) => {
 fs.appendFileSync("./test.txt" , `Date.now().toLocaleString`)
 
 
-## Q) Nodejs architecture
-## Synchronous and asynchronous
+ // Q) Nodejs architecture
+ // Synchronous and asynchronous
 
 nodejs -> event queue -> option 1 (blocking operation) || option 2(non-blocking operation) 
 if(non blocking AKA asynchronous) It will be immediately solved
