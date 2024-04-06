@@ -6,7 +6,7 @@
 
 ## Create an http server in node.js
 
-```
+``` Javascript
 const express = require('express')
 const app = express()
 app.use(express.json())
