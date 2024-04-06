@@ -177,6 +177,14 @@ const value = new abc();
 console.log(value);
 
 
+// Solve Promise recursively
+
+function promiseRecurse(funcPromises) {
+  if (funcPromises.length === 0) return;
+  const currPromise = funcPromises.shift();
+  currPromise.then((res) => console.log(res)).catch((err) => console.log(err));
+  promiseRecurse(funcPromises);
+}
 
 
 
