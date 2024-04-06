@@ -29,5 +29,9 @@ nodejs -> event queue -> option 1 (blocking operation) || option 2(non-blocking 
 if(non blocking AKA asynchronous) It will be immediately solved
 if(blocking AKA synchronous) It will be send to Thread pool and workers will be assigned to it
 
+// path
+
+// os
+const os = require('os')
 
 
