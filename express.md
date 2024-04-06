@@ -6,13 +6,15 @@
 
 ## Create an http server in node.js
 
-`const express = require('express')
+```
+const express = require('express')
 const app = express()
 app.use(express.json())
 
 const PORT = 3000
 app.listen(PORT,()=> {
- console.log(`${PORT} listening`) } `
+ console.log(`${PORT} listening`) }
+ ```
 
 
  ## Middleware
