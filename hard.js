@@ -166,7 +166,6 @@ async function getValue() {
 
 getValue();
 
-// 
 
 function abc() {
   console.log("hi");
@@ -186,7 +185,7 @@ function promiseRecurse(funcPromises) {
   promiseRecurse(funcPromises);
 }
 
-
+// Implement promise yourself , promise.all , promise.race
 
 
 
