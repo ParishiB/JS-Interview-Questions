@@ -76,4 +76,19 @@ Promise.prototype.myPromiseAll = function (args) {
   });
 };
 
+// Call , Apply , Bind method
+
+Function.prototype.myCall = function(obj,...args){
+  obj.fn = this
+  obj.fn(...args)
+}
+
+
+// Apply
+Function.prototype.myApply = function(obj, args) {
+  obj.fn = this;
+  obj.fn(...args); 
+  
+};
+
 
