@@ -31,4 +31,49 @@ Array.prototype.myFilter = function(cb) {
   return res;
 }
 
+// Polyfil for Promise
+
+Promise.prototype.myPromiseRace = function (args) {
+  if (!Array.isArray(args)) return Promise.reject(new TypeError('Arguments must be an array'));
+
+  return new Promise((resolve, reject) => {
+    args.forEach((promise) => {
+      Promise.resolve(promise).then(
+        (value) => {
+          resolve(value);
+        },
+        (reason) => {
+          reject(reason);
+        }
+      );
+    });
+  });
+};
+
+// Polyfill for Promise.all
+
+Promise.prototype.myPromiseAll = function (args) {
+  if (!Array.isArray(args)) return Promise.reject(new TypeError('Arguments must be an array'));
+
+  return new Promise((resolve, reject) => {
+    const results = [];
+    let count = 0;
+
+    args.forEach((promise, index) => {
+      Promise.resolve(promise).then(
+        (value) => {
+          results[index] = value;
+          count++;
+          if (count === args.length) {
+            resolve(results);
+          }
+        },
+        (reason) => {
+          reject(reason);
+        }
+      );
+    });
+  });
+};
+
 
