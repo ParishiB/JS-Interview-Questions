@@ -37,6 +37,37 @@
 • Stateful: The server needs to maintain session state, which can become a scalability bottleneck, especially in distributed systems
 • Increased Server Load: Storing session data on the server can increase server load, especially with a large number of active sessions
 
+## JWT and bcrypt serve different purposes within an authentication system. JWTs are used for transmitting and validating claims, providing authentication and authorization in stateless environments. On the other hand, bcrypt is used for securely hashing and storing passwords in a way that is resistant to attacks. In practice, it's common to use bcrypt to hash passwords during user registration or authentication processes and then use JWTs for session management and access control
 
+
+## What are cookies?
+
+Cookies are small pieces of data stored by websites on a user's web browser. They are used to maintain stateful information between HTTP transactions, enabling websites to remember user actions and preferences across different sessions or pages. Here's a more detailed explanation:
+
+Purpose:
+
+Cookies serve several purposes in web development, including:
+
+Session Management: Cookies can be used to identify and track user sessions, allowing websites to maintain stateful interactions with users.
+
+Personalization: Websites can use cookies to remember user preferences, such as language settings, theme preferences, or items in a shopping cart.
+
+Tracking and Analytics: Cookies can be used to collect data on user behavior, such as pages visited, time spent on each page, and interactions with content. This data is often used for analytics, advertising targeting, and website optimization.
+
+Authentication: Cookies are commonly used to store authentication tokens or session identifiers, allowing users to remain logged in across multiple requests or sessions.
+Structure:
+
+Cookies are typically stored as text files on the user's device, such as a computer or smartphone.
+Each cookie consists of a key-value pair representing the data associated with the cookie.
+Cookies may also include additional attributes such as expiration date, domain, path, and security settings.
+Types of Cookies:
+
+Session Cookies: These cookies are temporary and are deleted when the user closes their web browser. They are often used for session management and authentication.
+
+Persistent Cookies: These cookies have an expiration date set in the future and remain on the user's device until they expire or are manually deleted.
+
+First-Party Cookies: Set by the website the user is currently visiting.
+
+Third-Party Cookies: Set by domains other than the one the user is visiting, often used for tracking and advertising purposes.
 
 
