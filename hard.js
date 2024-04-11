@@ -187,6 +187,19 @@ function promiseRecurse(funcPromises) {
 
 // Implement promise yourself , promise.all , promise.race
 
+// Differnce between microtask and macrotask ?
+Microtask Queue (Job Queue):
+
+Microtasks are tasks that are executed at the end of the current task or after the execution of JavaScript code.
+Promises' .then() and .catch() callbacks, as well as process.nextTick() in Node.js, are examples of operations that create microtasks.
+Microtasks have higher priority than macrotasks and are executed before them.
+Microtasks are typically used for high-priority tasks like promise resolution callbacks.
+Macrotask Queue (Task Queue):
+
+Macrotasks represent tasks that are queued to be executed in the future, usually after the current call stack has cleared.
+Examples of macrotasks include setTimeout, setInterval, I/O operations, UI rendering, and events like DOM events (click, keyup, etc.).
+Macrotasks are typically executed after the microtask queue has been emptied.
+Macrotasks are often used for less time-sensitive operations or tasks that can be delayed.
 
 
 
