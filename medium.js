@@ -437,3 +437,13 @@ Q) What is redux and how is it used?
 Q) What is dffiierence between type and interfaces(Typescript question)?
 Q) Give example of where arrow function makes more sense than normal function and vice-versa?
 
+Q) implement
+console.log(calculator.lakhs(14).thousand(10).ten(20).result
+Q) Implement 3 states of promise
+Q) async function print() {
+    console.log("The promise is pending");
+    await new Promise(() => {});
+}
+
+print();
+
