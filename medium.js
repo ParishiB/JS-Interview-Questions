@@ -465,3 +465,6 @@ console.log(obj2.helloWorld)
 
 What does it print?
 
+// Please implement your chunk Break the array into chunk of the size and push it to the resultant array and return it
+function chunk(arr,size){}
+
