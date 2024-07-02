@@ -468,3 +468,33 @@ What does it print?
 // Please implement your chunk Break the array into chunk of the size and push it to the resultant array and return it
 function chunk(arr,size){}
 
+
+Q) const sol = [
+  {
+    configs: {
+      type: "object",
+      properties: {
+        clientKey: {
+          type: "string",
+          title: "Client Id",
+        },
+        pspId: {
+          type: "string",
+          title: "BillDesk issued merchant id",
+          minLength: 1,
+        },
+      },
+    },
+  },
+];
+
+const configs: any = sol[0].configs;
+const properties = configs.properties;
+
+const formValues: any = {};
+
+for (let key in properties) {
+  formValues[key] = `<value-entered>`;
+}
+
+sol - console.log(formValues);
