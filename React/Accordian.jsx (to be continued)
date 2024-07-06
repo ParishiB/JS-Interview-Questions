@@ -1,0 +1,47 @@
+import React, { useState } from "react";
+
+const App = () => {
+  const [openIndex, setOpenIndex] = useState(null); // State to track which item's summary is open
+  const acc = [
+    {
+      index: 1,
+      text: "Checkbox 1",
+      summ: "This is info about checkbox 1",
+    },
+    {
+      index: 2,
+      text: "Checkbox 2",
+      summ: "This is info about checkbox 2",
+    },
+    {
+      index: 3,
+      text: "Checkbox 3",
+      summ: "This is info about checkbox 3",
+    },
+  ];
+
+  const toggleSummary = (index) => {
+    if (openIndex === index) {
+      setOpenIndex(null);
+    } else {
+      setOpenIndex(index);
+    }
+  };
+
+  return (
+    <div>
+      {acc.map((item) => (
+        <div className="" key={item.index}>
+          <input type="checkbox" name="" id="" />
+          {item.text}
+          <button onClick={() => toggleSummary(item.index)}>
+            {openIndex === item.index ? "collapse" : "expand"}
+          </button>
+          {openIndex === item.index && <p>{item.summ}</p>}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default App;
